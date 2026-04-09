@@ -1,0 +1,252 @@
+{
+  "languageToggle": {
+    "en": "EN",
+    "es": "ES",
+    "switchTo": "Switch language to {localeLabel}"
+  },
+  "nav": {
+    "logo": "DR. {doctorName}",
+    "links": [
+      { "id": "procedures", "label": "Procedures" },
+      { "id": "about", "label": "About" },
+      { "id": "before-after", "label": "Before & After" },
+      { "id": "contact", "label": "Contact" }
+    ],
+    "cta": "Schedule consultation",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu"
+  },
+  "hero": {
+    "eyebrow": "Plastic Surgery · Guadalajara",
+    "headline": "The finest version|of you,|with surgical precision.",
+    "subhead": "Premium template for [CLINIC_NAME] in Puerta de Hierro. Discreet care, natural results, institutional-grade safety.",
+    "primaryCta": "Schedule consultation",
+    "secondaryCta": "Explore procedures",
+    "trust": "100% confidential consultations",
+    "imageAlt": "Premium clinic hero image",
+    "stats": [
+      "+1,200 procedures",
+      "15 years of experience",
+      "Board-certified by [BOARD]"
+    ]
+  },
+  "about": {
+    "eyebrow": "Medical profile",
+    "title": "Facial and body surgery guided by high-specialty aesthetic judgment.",
+    "paragraphs": [
+      "Dr. [NAME] combines advanced surgical technique with individualized planning for realistic, harmonious outcomes.",
+      "Every [CLINIC_NAME] protocol prioritizes safety, ethics and close follow-up from initial consultation through full recovery."
+    ],
+    "imageAlt": "Portrait of the plastic surgeon",
+    "chips": [
+      "Facial Surgery",
+      "Body Contouring",
+      "Rejuvenation",
+      "Secondary Procedures"
+    ],
+    "quote": "Excellent aesthetic surgery does not change who you are; it reveals who you have always been.",
+    "quoteAuthor": "Dr. [NAME]"
+  },
+  "procedures": {
+    "eyebrow": "Surgical portfolio",
+    "title": "Procedures designed for sophisticated, natural-looking outcomes.",
+    "subtitle": "Facial and body options tailored to each patient's anatomy and goals.",
+    "learnMore": "Learn more",
+    "imageAlt": "Reference image for {name}",
+    "items": [
+      {
+        "name": "Rhinoplasty",
+        "description": "Functional and aesthetic refinement to improve proportion, breathing and facial balance."
+      },
+      {
+        "name": "Blepharoplasty",
+        "description": "Eye contour rejuvenation for a rested, precise and refreshed expression."
+      },
+      {
+        "name": "Facelift",
+        "description": "Tissue repositioning to restore firmness and definition while preserving natural identity."
+      },
+      {
+        "name": "Liposuction",
+        "description": "Selective body sculpting to refine silhouette transitions with controlled precision."
+      },
+      {
+        "name": "Breast Augmentation",
+        "description": "Customized projection and volume planning based on anatomy and aesthetic intent."
+      },
+      {
+        "name": "Abdominoplasty",
+        "description": "Abdominal tightening with contour restoration and core support improvement."
+      },
+      {
+        "name": "Otoplasty",
+        "description": "Conservative ear reshaping to harmonize form and position."
+      },
+      {
+        "name": "Mentoplasty",
+        "description": "Chin definition designed to balance lower facial proportions."
+      }
+    ]
+  },
+  "whyUs": {
+    "eyebrow": "Why us",
+    "title": "Clinical confidence at every stage of care.",
+    "items": [
+      {
+        "label": "International Certification",
+        "copy": "Protocols aligned with global standards in surgical safety and ethical practice."
+      },
+      {
+        "label": "Advanced Technology",
+        "copy": "Planning, operating room and recovery supported by contemporary surgical systems."
+      },
+      {
+        "label": "Personalized Care",
+        "copy": "Dedicated one-to-one guidance before, during and after each procedure."
+      },
+      {
+        "label": "Natural Results",
+        "copy": "Realistic goals that preserve facial and body identity with refined enhancement."
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "Real experiences from local and international patients.",
+    "items": [
+      {
+        "quote": "The process was discreet, clear and deeply professional. My result looks elegant and natural.",
+        "name": "Mariana",
+        "procedure": "Rhinoplasty"
+      },
+      {
+        "quote": "I felt confident from the first visit. Post-op follow-up was outstanding.",
+        "name": "Daniela",
+        "procedure": "Breast Augmentation"
+      },
+      {
+        "quote": "Every decision was explained honestly. The result is exactly what I wanted.",
+        "name": "Fernanda",
+        "procedure": "Blepharoplasty"
+      }
+    ]
+  },
+  "beforeAfter": {
+    "eyebrow": "Before & After",
+    "title": "Reference clinical cases",
+    "bannerTitle": "Important notice",
+    "bannerCopy": "Visual material is provided for educational and informative purposes. It does not guarantee outcomes and does not replace individualized medical evaluation.",
+    "beforeLabel": "Before",
+    "afterLabel": "After",
+    "pairAlt": "{procedure} comparison",
+    "items": [
+      { "procedure": "Rhinoplasty" },
+      { "procedure": "Facelift" },
+      { "procedure": "Abdominoplasty" }
+    ],
+    "caption": "Individual results may vary"
+  },
+  "contact": {
+    "eyebrow": "Initial consultation",
+    "title": "Book your private assessment",
+    "subtitle": "Submit this form and the [CLINIC_NAME] team will contact you within one business day.",
+    "form": {
+      "fullName": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "phoneHint": "Include country code with +52",
+      "procedure": "Procedure of interest",
+      "procedurePlaceholder": "Select a procedure",
+      "message": "Message",
+      "submit": "Request consultation",
+      "consoleLog": "Consultation payload (placeholder)"
+    },
+    "procedureOptions": [
+      "Rhinoplasty",
+      "Blepharoplasty",
+      "Facelift",
+      "Liposuction",
+      "Breast Augmentation",
+      "Abdominoplasty",
+      "Otoplasty",
+      "Mentoplasty"
+    ],
+    "info": {
+      "title": "Contact details",
+      "addressLabel": "Address",
+      "whatsappLabel": "WhatsApp",
+      "hoursLabel": "Hours",
+      "hours": "Monday to Friday · 9:00 AM to 7:00 PM",
+      "mapTitle": "Location",
+      "mapPlaceholder": "Puerta de Hierro map (placeholder)",
+      "mapLink": "Open in Google Maps"
+    }
+  },
+  "booking": {
+    "eyebrow": "Book with specialists",
+    "title": "Choose the right surgeon for your private consultation.",
+    "subtitle": "Select doctor, date and appointment format directly from the online calendar.",
+    "languagesLabel": "Languages",
+    "languageBadges": {
+      "es": "ES",
+      "en": "EN"
+    },
+    "cta": "Book with {name}",
+    "unavailable": "Booking unavailable",
+    "close": "Close booking",
+    "modalTitle": "Book with {name}",
+    "photoAlt": "Profile photo of {name}",
+    "doctors": {
+      "doctor1": {
+        "name": "Dr. [NAME 01]",
+        "specialty": "Rhinoplasty and facial surgery"
+      },
+      "doctor2": {
+        "name": "Dr. [NAME 02]",
+        "specialty": "Blepharoplasty and periocular rejuvenation"
+      },
+      "doctor3": {
+        "name": "Dr. [NAME 03]",
+        "specialty": "Body contouring and high-definition liposuction"
+      },
+      "doctor4": {
+        "name": "Dr. [NAME 04]",
+        "specialty": "Aesthetic and reconstructive breast surgery"
+      },
+      "doctor5": {
+        "name": "Dr. [NAME 05]",
+        "specialty": "Facelift and advanced facial harmonization"
+      },
+      "doctor6": {
+        "name": "Dr. [NAME 06]",
+        "specialty": "Abdominoplasty and post-bariatric surgery"
+      }
+    }
+  },
+  "certifications": {
+    "label": "Certifications & Affiliations",
+    "logos": [
+      "[BOARD 01]",
+      "[BOARD 02]",
+      "[HOSPITAL 01]",
+      "[HOSPITAL 02]",
+      "[ASSOCIATION 01]",
+      "[ASSOCIATION 02]"
+    ]
+  },
+  "footer": {
+    "logo": "DR. {doctorName}",
+    "tagline": "Premium template for a private plastic surgery clinic in Guadalajara.",
+    "quickLinksTitle": "Quick links",
+    "quickLinks": [
+      { "id": "procedures", "label": "Procedures" },
+      { "id": "about", "label": "About" },
+      { "id": "before-after", "label": "Before & After" },
+      { "id": "contact", "label": "Contact" }
+    ],
+    "contactTitle": "Contact",
+    "privacy": "Privacy Notice",
+    "terms": "Terms",
+    "copyright": "© {year} [CLINIC_NAME]. All rights reserved."
+  }
+}

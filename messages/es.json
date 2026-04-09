@@ -1,0 +1,252 @@
+{
+  "languageToggle": {
+    "en": "EN",
+    "es": "ES",
+    "switchTo": "Cambiar idioma a {localeLabel}"
+  },
+  "nav": {
+    "logo": "DR. {doctorName}",
+    "links": [
+      { "id": "procedures", "label": "Procedimientos" },
+      { "id": "about", "label": "Nosotros" },
+      { "id": "before-after", "label": "Antes y Después" },
+      { "id": "contact", "label": "Contacto" }
+    ],
+    "cta": "Agendar consulta",
+    "openMenu": "Abrir menú de navegación",
+    "closeMenu": "Cerrar menú de navegación"
+  },
+  "hero": {
+    "eyebrow": "Cirugía Plástica · Guadalajara",
+    "headline": "La mejor versión|de ti,|con precisión quirúrgica.",
+    "subhead": "Plantilla premium para [CLINIC_NAME] en Puerta de Hierro. Atención discreta, resultados naturales y seguridad institucional.",
+    "primaryCta": "Agendar consulta",
+    "secondaryCta": "Ver procedimientos",
+    "trust": "Consultas 100% confidenciales",
+    "imageAlt": "Imagen principal de clínica premium",
+    "stats": [
+      "+1,200 procedimientos",
+      "15 años de experiencia",
+      "Certificado por [BOARD]"
+    ]
+  },
+  "about": {
+    "eyebrow": "Perfil médico",
+    "title": "Cirugía facial y corporal con criterio estético de alta especialidad.",
+    "paragraphs": [
+      "El Dr. [NOMBRE] integra técnica quirúrgica avanzada con planeación personalizada para objetivos realistas y armónicos.",
+      "Cada protocolo de [CLINIC_NAME] prioriza seguridad, ética y seguimiento cercano desde la primera valoración hasta la recuperación final."
+    ],
+    "imageAlt": "Retrato del cirujano plástico",
+    "chips": [
+      "Cirugía Facial",
+      "Contorno Corporal",
+      "Rejuvenecimiento",
+      "Procedimientos Secundarios"
+    ],
+    "quote": "La cirugía estética bien hecha no transforma quién eres; revela quién siempre fuiste.",
+    "quoteAuthor": "Dr. [NOMBRE]"
+  },
+  "procedures": {
+    "eyebrow": "Portafolio quirúrgico",
+    "title": "Procedimientos diseñados para resultados sofisticados y naturales.",
+    "subtitle": "Opciones quirúrgicas y de armonización facial/corporal con evaluación individual.",
+    "learnMore": "Conocer más",
+    "imageAlt": "Imagen de referencia para {name}",
+    "items": [
+      {
+        "name": "Rinoplastia",
+        "description": "Refinamiento funcional y estético para mejorar proporción, respiración y equilibrio facial."
+      },
+      {
+        "name": "Blefaroplastia",
+        "description": "Rejuvenecimiento del contorno ocular para una expresión descansada y precisa."
+      },
+      {
+        "name": "Lifting Facial",
+        "description": "Reposicionamiento de tejidos para restaurar firmeza y definición sin perder naturalidad."
+      },
+      {
+        "name": "Liposucción",
+        "description": "Escultura corporal selectiva para perfilar silueta con transiciones suaves."
+      },
+      {
+        "name": "Mamoplastia de Aumento",
+        "description": "Proyección y volumen mamario con planeación anatómica personalizada."
+      },
+      {
+        "name": "Abdominoplastia",
+        "description": "Corrección de flacidez abdominal y fortalecimiento del soporte de pared."
+      },
+      {
+        "name": "Otoplastia",
+        "description": "Armonización de la forma y posición de orejas con técnica conservadora."
+      },
+      {
+        "name": "Mentoplastia",
+        "description": "Definición del mentón para mejorar proporciones del tercio inferior facial."
+      }
+    ]
+  },
+  "whyUs": {
+    "eyebrow": "Diferenciadores",
+    "title": "Confianza clínica en cada detalle del proceso.",
+    "items": [
+      {
+        "label": "Certificación Internacional",
+        "copy": "Protocolos alineados con estándares globales de seguridad quirúrgica y práctica ética."
+      },
+      {
+        "label": "Tecnología de Vanguardia",
+        "copy": "Planeación, quirófano y recuperación asistidos por herramientas de última generación."
+      },
+      {
+        "label": "Atención Personalizada",
+        "copy": "Acompañamiento individual antes, durante y después de cada procedimiento."
+      },
+      {
+        "label": "Resultados Naturales",
+        "copy": "Objetivos realistas para mantener identidad facial y corporal con refinamiento estético."
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Testimonios",
+    "title": "Experiencias reales de pacientes internacionales y locales.",
+    "items": [
+      {
+        "quote": "El proceso fue discreto, claro y sumamente profesional. El resultado luce natural y elegante.",
+        "name": "Mariana",
+        "procedure": "Rinoplastia"
+      },
+      {
+        "quote": "Sentí confianza desde la primera consulta. El seguimiento postoperatorio fue impecable.",
+        "name": "Daniela",
+        "procedure": "Mamoplastia de Aumento"
+      },
+      {
+        "quote": "Me explicaron cada decisión con honestidad. El cambio fue exactamente lo que buscaba.",
+        "name": "Fernanda",
+        "procedure": "Blefaroplastia"
+      }
+    ]
+  },
+  "beforeAfter": {
+    "eyebrow": "Antes y Después",
+    "title": "Casos clínicos de referencia",
+    "bannerTitle": "Aviso informativo",
+    "bannerCopy": "Material visual con fines informativos y educativos. No constituye promesa de resultado ni sustituye la valoración médica personalizada.",
+    "beforeLabel": "Antes",
+    "afterLabel": "Después",
+    "pairAlt": "Comparativo {procedure}",
+    "items": [
+      { "procedure": "Rinoplastia" },
+      { "procedure": "Lifting Facial" },
+      { "procedure": "Abdominoplastia" }
+    ],
+    "caption": "Resultados individuales pueden variar"
+  },
+  "contact": {
+    "eyebrow": "Consulta inicial",
+    "title": "Agenda tu valoración privada",
+    "subtitle": "Completa este formulario y el equipo de [CLINIC_NAME] te contactará en menos de 24 horas hábiles.",
+    "form": {
+      "fullName": "Nombre completo",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "phoneHint": "Incluye lada con prefijo +52",
+      "procedure": "Procedimiento de interés",
+      "procedurePlaceholder": "Selecciona una opción",
+      "message": "Mensaje",
+      "submit": "Solicitar consulta",
+      "consoleLog": "Datos de consulta (placeholder)"
+    },
+    "procedureOptions": [
+      "Rinoplastia",
+      "Blefaroplastia",
+      "Lifting Facial",
+      "Liposucción",
+      "Mamoplastia de Aumento",
+      "Abdominoplastia",
+      "Otoplastia",
+      "Mentoplastia"
+    ],
+    "info": {
+      "title": "Información de contacto",
+      "addressLabel": "Dirección",
+      "whatsappLabel": "WhatsApp",
+      "hoursLabel": "Horario",
+      "hours": "Lunes a Viernes · 9:00 a 19:00",
+      "mapTitle": "Ubicación",
+      "mapPlaceholder": "Mapa de Puerta de Hierro (placeholder)",
+      "mapLink": "Abrir en Google Maps"
+    }
+  },
+  "booking": {
+    "eyebrow": "Agenda con especialistas",
+    "title": "Selecciona al cirujano ideal para tu valoración privada.",
+    "subtitle": "Elige médico, horario y modalidad de consulta desde el calendario en línea.",
+    "languagesLabel": "Idiomas",
+    "languageBadges": {
+      "es": "ES",
+      "en": "EN"
+    },
+    "cta": "Agendar con {name}",
+    "unavailable": "Agenda no disponible",
+    "close": "Cerrar agenda",
+    "modalTitle": "Agenda con {name}",
+    "photoAlt": "Foto de perfil de {name}",
+    "doctors": {
+      "doctor1": {
+        "name": "Dr. [NOMBRE 01]",
+        "specialty": "Rinoplastia y cirugía facial"
+      },
+      "doctor2": {
+        "name": "Dra. [NOMBRE 02]",
+        "specialty": "Blefaroplastia y rejuvenecimiento periocular"
+      },
+      "doctor3": {
+        "name": "Dr. [NOMBRE 03]",
+        "specialty": "Contorno corporal y liposucción de alta definición"
+      },
+      "doctor4": {
+        "name": "Dra. [NOMBRE 04]",
+        "specialty": "Mamoplastia estética y reconstructiva"
+      },
+      "doctor5": {
+        "name": "Dr. [NOMBRE 05]",
+        "specialty": "Lifting facial y armonización avanzada"
+      },
+      "doctor6": {
+        "name": "Dra. [NOMBRE 06]",
+        "specialty": "Abdominoplastia y cirugía postbariátrica"
+      }
+    }
+  },
+  "certifications": {
+    "label": "Certificaciones y Afiliaciones",
+    "logos": [
+      "[BOARD 01]",
+      "[BOARD 02]",
+      "[HOSPITAL 01]",
+      "[HOSPITAL 02]",
+      "[ASOCIACIÓN 01]",
+      "[ASOCIACIÓN 02]"
+    ]
+  },
+  "footer": {
+    "logo": "DR. {doctorName}",
+    "tagline": "Plantilla premium para clínica privada de cirugía plástica en Guadalajara.",
+    "quickLinksTitle": "Enlaces",
+    "quickLinks": [
+      { "id": "procedures", "label": "Procedimientos" },
+      { "id": "about", "label": "Nosotros" },
+      { "id": "before-after", "label": "Antes y Después" },
+      { "id": "contact", "label": "Contacto" }
+    ],
+    "contactTitle": "Contacto",
+    "privacy": "Aviso de Privacidad",
+    "terms": "Términos",
+    "copyright": "© {year} [CLINIC_NAME]. Todos los derechos reservados."
+  }
+}
