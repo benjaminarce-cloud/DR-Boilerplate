@@ -1,6 +1,7 @@
 'use client';
 
 import {buttonClasses} from '@/components/ui/Button';
+import doctorConfig from '@/lib/doctor.config';
 import {BLUR_DATA_URL, PLACEHOLDER_IMAGE_PATH} from '@/lib/image';
 import {motion} from 'framer-motion';
 import Image from 'next/image';
@@ -11,7 +12,6 @@ import {useMemo} from 'react';
 export default function Hero() {
   const t = useTranslations('hero');
   const headlineLines = useMemo(() => t('headline').split('|').map((line) => line.trim()), [t]);
-  const stats = useMemo(() => t.raw('stats') as string[], [t]);
 
   return (
     <section id="home" className="section-anchor flex min-h-screen items-end bg-[var(--color-bg)] pt-28 pb-10 lg:pb-14">
@@ -51,7 +51,12 @@ export default function Hero() {
               transition={{delay: 0.28, duration: 0.6, ease: 'easeOut'}}
               className="max-w-2xl text-base font-light text-[var(--color-ink-muted)] md:text-lg"
             >
-              {t('subhead')}
+              {t('subhead', {
+                doctorName: doctorConfig.name,
+                doctorTitle: doctorConfig.title,
+                clinic: doctorConfig.clinic,
+                hospital: doctorConfig.hospital
+              })}
             </motion.p>
 
             <motion.div
@@ -92,7 +97,7 @@ export default function Hero() {
           >
             <Image
               src={PLACEHOLDER_IMAGE_PATH}
-              alt={t('imageAlt')}
+              alt={t('imageAlt', {doctorName: doctorConfig.name})}
               fill
               sizes="(max-width: 1024px) 100vw, 38vw"
               className="object-cover"
@@ -109,12 +114,12 @@ export default function Hero() {
           className="border-t border-[var(--color-border)] pt-6"
         >
           <div className="flex flex-wrap gap-3">
-            {stats.map((stat) => (
+            {doctorConfig.stats.map((stat) => (
               <span
-                key={stat}
+                key={`${stat.value}-${stat.labelKey}`}
                 className="rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-xs tracking-[0.08em] text-[var(--color-ink-muted)]"
               >
-                {stat}
+                {stat.value} {t(stat.labelKey)}
               </span>
             ))}
           </div>

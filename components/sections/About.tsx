@@ -1,5 +1,6 @@
 'use client';
 
+import doctorConfig from '@/lib/doctor.config';
 import {BLUR_DATA_URL, PLACEHOLDER_IMAGE_PATH} from '@/lib/image';
 import {motion, useInView} from 'framer-motion';
 import Image from 'next/image';
@@ -9,7 +10,6 @@ import {useMemo, useRef} from 'react';
 export default function About() {
   const t = useTranslations('about');
   const paragraphs = useMemo(() => t.raw('paragraphs') as string[], [t]);
-  const chips = useMemo(() => t.raw('chips') as string[], [t]);
   const ref = useRef<HTMLElement | null>(null);
   const isInView = useInView(ref, {once: true, amount: 0.15});
 
@@ -26,7 +26,7 @@ export default function About() {
         <div className="soft-grain relative aspect-[4/5] overflow-hidden rounded-[1.5rem] border border-[var(--color-border)] bg-[var(--color-surface)]">
           <Image
             src={PLACEHOLDER_IMAGE_PATH}
-            alt={t('imageAlt')}
+            alt={t('imageAlt', {doctorName: doctorConfig.name})}
             fill
             sizes="(max-width: 1024px) 100vw, 45vw"
             className="object-cover"
@@ -40,22 +40,22 @@ export default function About() {
           <h2 className="font-display text-4xl leading-[1.08] font-normal text-[var(--color-ink)] md:text-5xl">{t('title')}</h2>
 
           <div className="space-y-4 text-[15px] font-light text-[var(--color-ink-muted)] md:text-base">
-            {paragraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+            {paragraphs.map((paragraph, index) => (
+              <p key={`${paragraph}-${index}`}>{t(`paragraphs.${index}`, {doctorName: doctorConfig.name})}</p>
             ))}
           </div>
 
           <div className="flex flex-wrap gap-2.5">
-            {chips.map((chip) => (
-              <span key={chip} className="rounded-full border border-[var(--color-border)] px-3.5 py-1.5 text-xs tracking-[0.08em] text-[var(--color-ink-muted)]">
-                {chip}
+            {doctorConfig.credentials.map((credential) => (
+              <span key={credential} className="rounded-full border border-[var(--color-border)] px-3.5 py-1.5 text-xs tracking-[0.08em] text-[var(--color-ink-muted)]">
+                {credential}
               </span>
             ))}
           </div>
 
           <blockquote className="border-l border-[var(--color-accent)] pl-4">
             <p className="font-display text-3xl leading-tight font-light italic text-[var(--color-ink)]">“{t('quote')}”</p>
-            <footer className="mt-2 text-sm text-[var(--color-ink-muted)]">{t('quoteAuthor')}</footer>
+            <footer className="mt-2 text-sm text-[var(--color-ink-muted)]">{t('quoteAuthor', {doctorShortName: doctorConfig.shortName})}</footer>
           </blockquote>
         </div>
       </div>

@@ -5,7 +5,7 @@
     "switchTo": "Switch language to {localeLabel}"
   },
   "nav": {
-    "logo": "DR. {doctorName}",
+    "logo": "{doctorName}",
     "links": [
       { "id": "procedures", "label": "Procedures" },
       { "id": "about", "label": "About Me" },
@@ -19,33 +19,27 @@
   "hero": {
     "eyebrow": "Plastic Surgery · Guadalajara",
     "headline": "The finest version|of you,|with surgical precision.",
-    "subhead": "Dr. [NAME], plastic surgeon in Puerta de Hierro. Private care, natural outcomes and high-specialty technique.",
+    "subhead": "{doctorName}, {doctorTitle} at {clinic}. Private care at {hospital}, natural outcomes and high-specialty technique.",
     "primaryCta": "Schedule consultation",
     "secondaryCta": "Explore procedures",
     "trust": "100% confidential consultations",
-    "imageAlt": "Premium clinic hero image",
-    "stats": [
-      "+1,200 procedures",
-      "15 years of experience",
-      "Board-certified by [BOARD]"
-    ]
+    "imageAlt": "Portrait of {doctorName}",
+    "statsLabels": {
+      "yearsExperience": "years of experience",
+      "boardCertified": "board certification",
+      "reviewScore": "patient rating"
+    }
   },
   "about": {
     "eyebrow": "About me",
     "title": "Facial and body surgery guided by high-specialty aesthetic judgment.",
     "paragraphs": [
-      "Dr. [NAME] combines advanced surgical technique with individualized planning for realistic, harmonious outcomes.",
+      "{doctorName} combines advanced surgical technique with individualized planning for realistic, harmonious outcomes.",
       "Every protocol in my practice prioritizes safety, ethics and close follow-up from consultation through full recovery."
     ],
-    "imageAlt": "Portrait of the plastic surgeon",
-    "chips": [
-      "Facial Surgery",
-      "Body Contouring",
-      "Rejuvenation",
-      "Secondary Procedures"
-    ],
+    "imageAlt": "Portrait of {doctorName}",
     "quote": "Excellent aesthetic surgery does not change who you are; it reveals who you have always been.",
-    "quoteAuthor": "Dr. [NAME]"
+    "quoteAuthor": "{doctorShortName}"
   },
   "procedures": {
     "eyebrow": "Surgical portfolio",
@@ -53,43 +47,43 @@
     "subtitle": "Facial and body options tailored to each patient's anatomy and goals.",
     "learnMore": "Learn more",
     "imageAlt": "Reference image for {name}",
-    "items": [
-      {
+    "catalog": {
+      "rinoplastia": {
         "name": "Rhinoplasty",
         "description": "Functional and aesthetic refinement to improve proportion, breathing and facial balance."
       },
-      {
+      "blefaroplastia": {
         "name": "Blepharoplasty",
         "description": "Eye contour rejuvenation for a rested, precise and refreshed expression."
       },
-      {
+      "lifting-facial": {
         "name": "Facelift",
         "description": "Tissue repositioning to restore firmness and definition while preserving natural identity."
       },
-      {
+      "liposuccion": {
         "name": "Liposuction",
         "description": "Selective body sculpting to refine silhouette transitions with controlled precision."
       },
-      {
+      "mamoplastia-aumento": {
         "name": "Breast Augmentation",
         "description": "Customized projection and volume planning based on anatomy and aesthetic intent."
       },
-      {
+      "abdominoplastia": {
         "name": "Abdominoplasty",
         "description": "Abdominal tightening with contour restoration and core support improvement."
       },
-      {
+      "otoplastia": {
         "name": "Otoplasty",
         "description": "Conservative ear reshaping to harmonize form and position."
       },
-      {
+      "mentoplastia": {
         "name": "Mentoplasty",
         "description": "Chin definition designed to balance lower facial proportions."
       }
-    ]
+    }
   },
   "whyUs": {
-    "eyebrow": "Why us",
+    "eyebrow": "Differentiators",
     "title": "Clinical confidence at every stage of care.",
     "items": [
       {
@@ -149,7 +143,7 @@
   "contact": {
     "eyebrow": "Initial consultation",
     "title": "Book your private assessment",
-    "subtitle": "Submit this form and my office will contact you within one business day.",
+    "subtitle": "Submit this form and {doctorShortName}'s office will contact you within one business day.",
     "form": {
       "fullName": "Full name",
       "email": "Email",
@@ -161,19 +155,10 @@
       "submit": "Request consultation",
       "consoleLog": "Consultation payload (placeholder)"
     },
-    "procedureOptions": [
-      "Rhinoplasty",
-      "Blepharoplasty",
-      "Facelift",
-      "Liposuction",
-      "Breast Augmentation",
-      "Abdominoplasty",
-      "Otoplasty",
-      "Mentoplasty"
-    ],
     "info": {
       "title": "Contact details",
       "addressLabel": "Address",
+      "hospitalLabel": "Hospital",
       "whatsappLabel": "WhatsApp",
       "hoursLabel": "Hours",
       "hours": "Monday to Friday · 9:00 AM to 7:00 PM",
@@ -184,19 +169,19 @@
   },
   "booking": {
     "eyebrow": "Book with me",
-    "title": "Schedule your private consultation with Dr. [NAME].",
+    "title": "Schedule your private consultation with {doctorName}.",
     "subtitle": "Select your preferred appointment time and format directly in the online calendar.",
-    "specialty": "High-specialty facial and body plastic surgery",
     "languagesLabel": "Languages",
     "languageBadges": {
       "es": "ES",
       "en": "EN"
     },
-    "cta": "Book with {name}",
+    "reviews": "reviews",
+    "cta": "Book with {doctorShortName}",
     "unavailable": "Booking unavailable",
     "close": "Close booking",
-    "modalTitle": "Book with {name}",
-    "photoAlt": "Portrait of {name}"
+    "modalTitle": "Book with {doctorName}",
+    "photoAlt": "Portrait of {doctorName}"
   },
   "certifications": {
     "label": "Certifications & Affiliations",
@@ -210,7 +195,7 @@
     ]
   },
   "footer": {
-    "logo": "DR. {doctorName}",
+    "logo": "{doctorName}",
     "tagline": "Premium personal-brand template for a plastic surgeon in Guadalajara.",
     "quickLinksTitle": "Quick links",
     "quickLinks": [
@@ -222,6 +207,6 @@
     "contactTitle": "Contact",
     "privacy": "Privacy Notice",
     "terms": "Terms",
-    "copyright": "© {year} [CLINIC_NAME]. All rights reserved."
+    "copyright": "© {year} {clinic}. All rights reserved."
   }
 }

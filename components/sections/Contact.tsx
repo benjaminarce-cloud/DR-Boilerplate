@@ -1,18 +1,24 @@
 'use client';
 
 import Button from '@/components/ui/Button';
+import doctorConfig from '@/lib/doctor.config';
 import {motion, useInView} from 'framer-motion';
 import {useTranslations} from 'next-intl';
 import {useMemo, useRef, type FormEvent} from 'react';
 
 export default function Contact() {
   const t = useTranslations('contact');
-  const procedureOptions = useMemo(() => t.raw('procedureOptions') as string[], [t]);
-  const clinicAddress =
-    process.env.NEXT_PUBLIC_CLINIC_ADDRESS ??
-    'Blvrd Puerta de Hierro 5150, Puerta de Hierro, Zapopan, Jalisco, Mexico';
-  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '+523312345678';
+  const tProcedures = useTranslations('procedures');
   const mapEmbed = process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED_URL ?? 'https://maps.google.com/?q=Puerta+de+Hierro+Zapopan';
+
+  const procedureOptions = useMemo(
+    () =>
+      doctorConfig.procedures.map((procedure) => ({
+        key: procedure.key,
+        label: tProcedures(`catalog.${procedure.key}.name`)
+      })),
+    [tProcedures]
+  );
 
   const ref = useRef<HTMLElement | null>(null);
   const isInView = useInView(ref, {once: true, amount: 0.15});
@@ -36,7 +42,7 @@ export default function Contact() {
         >
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-accent)]">{t('eyebrow')}</p>
           <h2 className="mt-4 font-display text-4xl leading-tight font-normal text-[var(--color-ink)] md:text-5xl">{t('title')}</h2>
-          <p className="mt-3 text-sm text-[var(--color-ink-muted)]">{t('subtitle')}</p>
+          <p className="mt-3 text-sm text-[var(--color-ink-muted)]">{t('subtitle', {doctorShortName: doctorConfig.shortName})}</p>
 
           <form onSubmit={handleSubmit} className="mt-8 space-y-5">
             <div className="space-y-2">
@@ -93,8 +99,8 @@ export default function Contact() {
                   {t('form.procedurePlaceholder')}
                 </option>
                 {procedureOptions.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
+                  <option key={option.key} value={option.label}>
+                    {option.label}
                   </option>
                 ))}
               </select>
@@ -129,15 +135,19 @@ export default function Contact() {
             <div className="mt-4 space-y-4 text-sm text-[var(--color-ink-muted)]">
               <p>
                 <span className="block text-xs uppercase tracking-[0.12em]">{t('info.addressLabel')}</span>
-                <span className="text-[var(--color-ink)]">{clinicAddress}</span>
+                <span className="text-[var(--color-ink)]">{doctorConfig.address}</span>
+              </p>
+              <p>
+                <span className="block text-xs uppercase tracking-[0.12em]">{t('info.hospitalLabel')}</span>
+                <span className="text-[var(--color-ink)]">{doctorConfig.hospital}</span>
               </p>
               <p>
                 <span className="block text-xs uppercase tracking-[0.12em]">{t('info.whatsappLabel')}</span>
                 <a
-                  href={`https://wa.me/${whatsapp.replace(/[^\d]/g, '')}`}
+                  href={`https://wa.me/${doctorConfig.whatsapp}`}
                   className="text-[var(--color-ink)] transition-colors duration-200 hover:text-[var(--color-accent-dark)]"
                 >
-                  {whatsapp}
+                  +{doctorConfig.whatsapp}
                 </a>
               </p>
               <p>

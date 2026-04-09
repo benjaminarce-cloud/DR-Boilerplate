@@ -2,6 +2,7 @@
 
 import Cal from '@calcom/embed-react';
 import Button from '@/components/ui/Button';
+import doctorConfig from '@/lib/doctor.config';
 import {BLUR_DATA_URL, PLACEHOLDER_IMAGE_PATH} from '@/lib/image';
 import {AnimatePresence, motion, useInView} from 'framer-motion';
 import Image from 'next/image';
@@ -10,13 +11,12 @@ import {useEffect, useRef, useState} from 'react';
 
 export default function Booking() {
   const t = useTranslations('booking');
-  const calUsername = process.env.NEXT_PUBLIC_CAL_USERNAME ?? '';
-  const surgeonName = process.env.NEXT_PUBLIC_CLINIC_NAME ?? 'DR. [NOMBRE]';
   const [isOpen, setIsOpen] = useState(false);
 
   const ref = useRef<HTMLElement | null>(null);
   const isInView = useInView(ref, {once: true, amount: 0.15});
-  const hasCalendar = calUsername.trim().length > 0;
+  const hasCalendar = doctorConfig.calUsername.trim().length > 0;
+  const hasReviewMeta = Boolean(doctorConfig.reviewScore && doctorConfig.reviewCount && doctorConfig.reviewSource);
 
   useEffect(() => {
     if (!isOpen) {
@@ -44,7 +44,7 @@ export default function Booking() {
             className="mx-auto mb-12 max-w-3xl space-y-4 text-center"
           >
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-accent)]">{t('eyebrow')}</p>
-            <h2 className="font-display text-4xl leading-tight font-normal text-[var(--color-ink)] md:text-5xl">{t('title')}</h2>
+            <h2 className="font-display text-4xl leading-tight font-normal text-[var(--color-ink)] md:text-5xl">{t('title', {doctorName: doctorConfig.name})}</h2>
             <p className="text-sm font-light text-[var(--color-ink-muted)] md:text-base">{t('subtitle')}</p>
           </motion.div>
 
@@ -58,7 +58,7 @@ export default function Booking() {
               <div className="relative aspect-[4/5] md:aspect-auto">
                 <Image
                   src={PLACEHOLDER_IMAGE_PATH}
-                  alt={t('photoAlt', {name: surgeonName})}
+                  alt={t('photoAlt', {doctorName: doctorConfig.name})}
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
                   className="object-cover"
@@ -69,8 +69,8 @@ export default function Booking() {
 
               <div className="space-y-6 p-8">
                 <div>
-                  <p className="font-display text-4xl leading-tight text-[var(--color-ink)]">{surgeonName}</p>
-                  <p className="mt-2 text-sm text-[var(--color-ink-muted)]">{t('specialty')}</p>
+                  <p className="font-display text-4xl leading-tight text-[var(--color-ink)]">{doctorConfig.name}</p>
+                  <p className="mt-2 text-sm text-[var(--color-ink-muted)]">{doctorConfig.title}</p>
                 </div>
 
                 <div className="space-y-2">
@@ -85,6 +85,14 @@ export default function Booking() {
                   </div>
                 </div>
 
+                {hasReviewMeta ? (
+                  <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-4 text-sm text-[var(--color-ink-muted)]">
+                    <p>
+                      {doctorConfig.reviewScore} · {doctorConfig.reviewCount} {t('reviews')} · {doctorConfig.reviewSource}
+                    </p>
+                  </div>
+                ) : null}
+
                 <Button
                   type="button"
                   variant="primary"
@@ -93,7 +101,7 @@ export default function Booking() {
                   onClick={() => setIsOpen(true)}
                   className={hasCalendar ? '' : 'cursor-not-allowed opacity-60'}
                 >
-                  {hasCalendar ? t('cta', {name: surgeonName}) : t('unavailable')}
+                  {hasCalendar ? t('cta', {doctorShortName: doctorConfig.shortName}) : t('unavailable')}
                 </Button>
               </div>
             </div>
@@ -112,7 +120,7 @@ export default function Booking() {
             onClick={() => setIsOpen(false)}
             role="dialog"
             aria-modal="true"
-            aria-label={t('modalTitle', {name: surgeonName})}
+            aria-label={t('modalTitle', {doctorName: doctorConfig.name})}
           >
             <motion.div
               initial={{opacity: 0, y: 12}}
@@ -124,8 +132,8 @@ export default function Booking() {
             >
               <header className="flex items-center justify-between border-b border-[var(--color-border)] px-5 py-4 md:px-6">
                 <div>
-                  <p className="font-display text-3xl leading-none text-[var(--color-ink)]">{surgeonName}</p>
-                  <p className="mt-1 text-sm text-[var(--color-ink-muted)]">{t('specialty')}</p>
+                  <p className="font-display text-3xl leading-none text-[var(--color-ink)]">{doctorConfig.name}</p>
+                  <p className="mt-1 text-sm text-[var(--color-ink-muted)]">{doctorConfig.title}</p>
                 </div>
                 <button
                   type="button"
@@ -137,7 +145,7 @@ export default function Booking() {
                 </button>
               </header>
               <div className="h-full min-h-[70vh] w-full">
-                <Cal calLink={calUsername} className="h-full w-full" />
+                <Cal calLink={doctorConfig.calUsername} className="h-full w-full" />
               </div>
             </motion.div>
           </motion.div>
@@ -146,4 +154,3 @@ export default function Booking() {
     </>
   );
 }
-

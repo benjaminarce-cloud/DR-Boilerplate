@@ -2,6 +2,7 @@
 
 import LanguageToggle from '@/components/ui/LanguageToggle';
 import {buttonClasses} from '@/components/ui/Button';
+import doctorConfig from '@/lib/doctor.config';
 import {AnimatePresence, motion} from 'framer-motion';
 import Link from 'next/link';
 import {useTranslations} from 'next-intl';
@@ -14,7 +15,6 @@ type NavLink = {
 
 export default function NavBar() {
   const t = useTranslations('nav');
-  const clinicName = process.env.NEXT_PUBLIC_CLINIC_NAME ?? '[NOMBRE]';
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -52,7 +52,7 @@ export default function NavBar() {
       >
         <div className="container-shell flex h-22 items-center justify-between gap-4">
           <Link href="#home" className="font-display text-2xl font-semibold tracking-[0.14em] text-[var(--color-ink)]">
-            {t('logo', {doctorName: clinicName})}
+            {t('logo', {doctorName: doctorConfig.shortName})}
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">

@@ -1,3 +1,4 @@
+import doctorConfig from '@/lib/doctor.config';
 import './globals.css';
 import type {Metadata} from 'next';
 import {Cormorant_Garamond, DM_Sans} from 'next/font/google';
@@ -19,19 +20,17 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://example.com'),
-  title: '[DR. NOMBRE] | Cirujano Plástico en Guadalajara',
-  description:
-    'Plantilla bilingüe premium para marca personal de cirujano plástico en Guadalajara. Premium bilingual placeholder for a solo plastic surgeon brand in Guadalajara.',
+  title: `${doctorConfig.name} | ${doctorConfig.title}`,
+  description: doctorConfig.metaDescription.es,
   openGraph: {
-    title: '[DR. NOMBRE] | Cirujano Plástico en Guadalajara',
-    description:
-      'Plantilla bilingüe premium para marca personal de cirujano plástico en Guadalajara. Premium bilingual placeholder for a solo plastic surgeon brand in Guadalajara.',
+    title: `${doctorConfig.name} | ${doctorConfig.title}`,
+    description: doctorConfig.metaDescription.es,
     images: [
       {
         url: '/images/og-placeholder.png',
         width: 1200,
         height: 630,
-        alt: 'Clinic Open Graph placeholder'
+        alt: `${doctorConfig.shortName} Open Graph`
       }
     ]
   },

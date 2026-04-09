@@ -1,19 +1,14 @@
 'use client';
 
+import doctorConfig from '@/lib/doctor.config';
 import {BLUR_DATA_URL, PLACEHOLDER_IMAGE_PATH} from '@/lib/image';
 import {motion, useInView} from 'framer-motion';
 import Image from 'next/image';
 import {useTranslations} from 'next-intl';
-import {useMemo, useRef} from 'react';
-
-type ProcedureCard = {
-  name: string;
-  description: string;
-};
+import {useRef} from 'react';
 
 export default function Procedures() {
   const t = useTranslations('procedures');
-  const cards = useMemo(() => t.raw('items') as ProcedureCard[], [t]);
   const ref = useRef<HTMLElement | null>(null);
   const isInView = useInView(ref, {once: true, amount: 0.15});
 
@@ -44,41 +39,50 @@ export default function Procedures() {
           }}
           className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3"
         >
-          {cards.map((card) => (
-            <motion.article
-              key={card.name}
-              variants={{
-                hidden: {opacity: 0, y: 24},
-                show: {opacity: 1, y: 0}
-              }}
-              whileHover={{y: -6}}
-              transition={{duration: 0.35, ease: 'easeOut'}}
-              className="group overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]"
-            >
-              <div className="relative aspect-square overflow-hidden">
-                <Image
-                  src={PLACEHOLDER_IMAGE_PATH}
-                  alt={t('imageAlt', {name: card.name})}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  placeholder="blur"
-                  blurDataURL={BLUR_DATA_URL}
-                />
-              </div>
-              <div className="space-y-4 p-6">
-                <h3 className="font-display text-3xl font-medium text-[var(--color-ink)]">{card.name}</h3>
-                <p className="text-sm font-light text-[var(--color-ink-muted)]">{card.description}</p>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 text-sm text-[var(--color-accent)] transition-colors duration-200 group-hover:text-[var(--color-accent-dark)]"
-                >
-                  <span>{t('learnMore')}</span>
-                  <span aria-hidden="true">→</span>
-                </a>
-              </div>
-            </motion.article>
-          ))}
+          {doctorConfig.procedures.map((procedure) => {
+            const name = t(`catalog.${procedure.key}.name`);
+            const description = t(`catalog.${procedure.key}.description`);
+
+            return (
+              <motion.article
+                key={procedure.key}
+                variants={{
+                  hidden: {opacity: 0, y: 24},
+                  show: {opacity: 1, y: 0}
+                }}
+                whileHover={{y: -6}}
+                transition={{duration: 0.35, ease: 'easeOut'}}
+                className={`group overflow-hidden rounded-2xl border bg-[var(--color-surface)] ${
+                  procedure.highlight
+                    ? 'border-[var(--color-accent)] shadow-[0_20px_40px_-28px_rgba(184,153,110,0.55)]'
+                    : 'border-[var(--color-border)]'
+                }`}
+              >
+                <div className="relative aspect-square overflow-hidden">
+                  <Image
+                    src={PLACEHOLDER_IMAGE_PATH}
+                    alt={t('imageAlt', {name})}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA_URL}
+                  />
+                </div>
+                <div className="space-y-4 p-6">
+                  <h3 className="font-display text-3xl font-medium text-[var(--color-ink)]">{name}</h3>
+                  <p className="text-sm font-light text-[var(--color-ink-muted)]">{description}</p>
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-2 text-sm text-[var(--color-accent)] transition-colors duration-200 group-hover:text-[var(--color-accent-dark)]"
+                  >
+                    <span>{t('learnMore')}</span>
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </motion.article>
+            );
+          })}
         </motion.div>
       </div>
     </section>

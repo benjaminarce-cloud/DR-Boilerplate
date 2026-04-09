@@ -5,7 +5,7 @@
     "switchTo": "Cambiar idioma a {localeLabel}"
   },
   "nav": {
-    "logo": "DR. {doctorName}",
+    "logo": "{doctorName}",
     "links": [
       { "id": "procedures", "label": "Procedimientos" },
       { "id": "about", "label": "Sobre mí" },
@@ -19,33 +19,27 @@
   "hero": {
     "eyebrow": "Cirugía Plástica · Guadalajara",
     "headline": "La mejor versión|de ti,|con precisión quirúrgica.",
-    "subhead": "Dr. [NOMBRE], cirujano plástico en Puerta de Hierro. Atención privada, resultados naturales y técnica de alta especialidad.",
+    "subhead": "{doctorName}, {doctorTitle} en {clinic}. Atención privada en {hospital}, resultados naturales y técnica de alta especialidad.",
     "primaryCta": "Agendar consulta",
     "secondaryCta": "Ver procedimientos",
     "trust": "Consultas 100% confidenciales",
-    "imageAlt": "Imagen principal de clínica premium",
-    "stats": [
-      "+1,200 procedimientos",
-      "15 años de experiencia",
-      "Certificado por [BOARD]"
-    ]
+    "imageAlt": "Retrato de {doctorName}",
+    "statsLabels": {
+      "yearsExperience": "años de experiencia",
+      "boardCertified": "certificación",
+      "reviewScore": "calificación de pacientes"
+    }
   },
   "about": {
     "eyebrow": "Sobre mí",
     "title": "Cirugía facial y corporal con criterio estético de alta especialidad.",
     "paragraphs": [
-      "El Dr. [NOMBRE] integra técnica quirúrgica avanzada con planeación personalizada para objetivos realistas y armónicos.",
+      "{doctorName} integra técnica quirúrgica avanzada con planeación personalizada para objetivos realistas y armónicos.",
       "Cada protocolo en mi práctica prioriza seguridad, ética y seguimiento cercano desde la primera valoración hasta la recuperación final."
     ],
-    "imageAlt": "Retrato del cirujano plástico",
-    "chips": [
-      "Cirugía Facial",
-      "Contorno Corporal",
-      "Rejuvenecimiento",
-      "Procedimientos Secundarios"
-    ],
+    "imageAlt": "Retrato de {doctorName}",
     "quote": "La cirugía estética bien hecha no transforma quién eres; revela quién siempre fuiste.",
-    "quoteAuthor": "Dr. [NOMBRE]"
+    "quoteAuthor": "{doctorShortName}"
   },
   "procedures": {
     "eyebrow": "Portafolio quirúrgico",
@@ -53,40 +47,40 @@
     "subtitle": "Opciones quirúrgicas y de armonización facial/corporal con evaluación individual.",
     "learnMore": "Conocer más",
     "imageAlt": "Imagen de referencia para {name}",
-    "items": [
-      {
+    "catalog": {
+      "rinoplastia": {
         "name": "Rinoplastia",
         "description": "Refinamiento funcional y estético para mejorar proporción, respiración y equilibrio facial."
       },
-      {
+      "blefaroplastia": {
         "name": "Blefaroplastia",
         "description": "Rejuvenecimiento del contorno ocular para una expresión descansada y precisa."
       },
-      {
+      "lifting-facial": {
         "name": "Lifting Facial",
         "description": "Reposicionamiento de tejidos para restaurar firmeza y definición sin perder naturalidad."
       },
-      {
+      "liposuccion": {
         "name": "Liposucción",
         "description": "Escultura corporal selectiva para perfilar silueta con transiciones suaves."
       },
-      {
+      "mamoplastia-aumento": {
         "name": "Mamoplastia de Aumento",
         "description": "Proyección y volumen mamario con planeación anatómica personalizada."
       },
-      {
+      "abdominoplastia": {
         "name": "Abdominoplastia",
         "description": "Corrección de flacidez abdominal y fortalecimiento del soporte de pared."
       },
-      {
+      "otoplastia": {
         "name": "Otoplastia",
         "description": "Armonización de la forma y posición de orejas con técnica conservadora."
       },
-      {
+      "mentoplastia": {
         "name": "Mentoplastia",
         "description": "Definición del mentón para mejorar proporciones del tercio inferior facial."
       }
-    ]
+    }
   },
   "whyUs": {
     "eyebrow": "Diferenciadores",
@@ -149,7 +143,7 @@
   "contact": {
     "eyebrow": "Consulta inicial",
     "title": "Agenda tu valoración privada",
-    "subtitle": "Completa este formulario y mi consultorio te contactará en menos de 24 horas hábiles.",
+    "subtitle": "Completa este formulario y el consultorio de {doctorShortName} te contactará en menos de 24 horas hábiles.",
     "form": {
       "fullName": "Nombre completo",
       "email": "Correo electrónico",
@@ -161,19 +155,10 @@
       "submit": "Solicitar consulta",
       "consoleLog": "Datos de consulta (placeholder)"
     },
-    "procedureOptions": [
-      "Rinoplastia",
-      "Blefaroplastia",
-      "Lifting Facial",
-      "Liposucción",
-      "Mamoplastia de Aumento",
-      "Abdominoplastia",
-      "Otoplastia",
-      "Mentoplastia"
-    ],
     "info": {
       "title": "Información de contacto",
       "addressLabel": "Dirección",
+      "hospitalLabel": "Hospital",
       "whatsappLabel": "WhatsApp",
       "hoursLabel": "Horario",
       "hours": "Lunes a Viernes · 9:00 a 19:00",
@@ -184,19 +169,19 @@
   },
   "booking": {
     "eyebrow": "Agenda conmigo",
-    "title": "Reserva tu consulta privada con Dr. [NOMBRE].",
+    "title": "Reserva tu consulta privada con {doctorName}.",
     "subtitle": "Selecciona horario y modalidad de consulta directamente en el calendario en línea.",
-    "specialty": "Cirugía facial y corporal de alta especialidad",
     "languagesLabel": "Idiomas",
     "languageBadges": {
       "es": "ES",
       "en": "EN"
     },
-    "cta": "Agendar con {name}",
+    "reviews": "reseñas",
+    "cta": "Agendar con {doctorShortName}",
     "unavailable": "Agenda no disponible",
     "close": "Cerrar agenda",
-    "modalTitle": "Agenda con {name}",
-    "photoAlt": "Retrato de {name}"
+    "modalTitle": "Agenda con {doctorName}",
+    "photoAlt": "Retrato de {doctorName}"
   },
   "certifications": {
     "label": "Certificaciones y Afiliaciones",
@@ -210,7 +195,7 @@
     ]
   },
   "footer": {
-    "logo": "DR. {doctorName}",
+    "logo": "{doctorName}",
     "tagline": "Marca personal premium para cirujano plástico en Guadalajara.",
     "quickLinksTitle": "Enlaces",
     "quickLinks": [
@@ -222,6 +207,6 @@
     "contactTitle": "Contacto",
     "privacy": "Aviso de Privacidad",
     "terms": "Términos",
-    "copyright": "© {year} [CLINIC_NAME]. Todos los derechos reservados."
+    "copyright": "© {year} {clinic}. Todos los derechos reservados."
   }
 }
