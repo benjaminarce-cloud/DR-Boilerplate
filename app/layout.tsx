@@ -1,4 +1,3 @@
-import IntlProvider from '@/components/ui/IntlProvider';
 import './globals.css';
 import type {Metadata} from 'next';
 import {Cormorant_Garamond, DM_Sans} from 'next/font/google';
@@ -20,13 +19,13 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://example.com'),
-  title: '[DR. NOMBRE] | Cirugía Plástica Guadalajara',
+  title: '[DR. NOMBRE] | Cirujano Plástico en Guadalajara',
   description:
-    'Plantilla bilingüe premium para clínica de cirugía plástica en Guadalajara. Premium bilingual placeholder for a private plastic surgery clinic in Guadalajara.',
+    'Plantilla bilingüe premium para marca personal de cirujano plástico en Guadalajara. Premium bilingual placeholder for a solo plastic surgeon brand in Guadalajara.',
   openGraph: {
-    title: '[DR. NOMBRE] | Cirugía Plástica Guadalajara',
+    title: '[DR. NOMBRE] | Cirujano Plástico en Guadalajara',
     description:
-      'Plantilla bilingüe premium para clínica de cirugía plástica en Guadalajara. Premium bilingual placeholder for a private plastic surgery clinic in Guadalajara.',
+      'Plantilla bilingüe premium para marca personal de cirujano plástico en Guadalajara. Premium bilingual placeholder for a solo plastic surgeon brand in Guadalajara.',
     images: [
       {
         url: '/images/og-placeholder.png',
@@ -39,7 +38,7 @@ export const metadata: Metadata = {
   alternates: {
     languages: {
       'es-MX': '/',
-      en: '/'
+      en: '/en'
     }
   }
 };
@@ -48,7 +47,7 @@ export default function RootLayout({children}: {children: ReactNode}) {
   return (
     <html lang="es-MX" suppressHydrationWarning>
       <body className={`${cormorant.variable} ${dmSans.variable} min-h-screen bg-[var(--color-bg)] text-[var(--color-ink)]`}>
-        <IntlProvider>{children}</IntlProvider>
+        {children}
       </body>
     </html>
   );

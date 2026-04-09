@@ -8,7 +8,7 @@
     "logo": "DR. {doctorName}",
     "links": [
       { "id": "procedures", "label": "Procedimientos" },
-      { "id": "about", "label": "Nosotros" },
+      { "id": "about", "label": "Sobre mí" },
       { "id": "before-after", "label": "Antes y Después" },
       { "id": "contact", "label": "Contacto" }
     ],
@@ -19,7 +19,7 @@
   "hero": {
     "eyebrow": "Cirugía Plástica · Guadalajara",
     "headline": "La mejor versión|de ti,|con precisión quirúrgica.",
-    "subhead": "Plantilla premium para [CLINIC_NAME] en Puerta de Hierro. Atención discreta, resultados naturales y seguridad institucional.",
+    "subhead": "Dr. [NOMBRE], cirujano plástico en Puerta de Hierro. Atención privada, resultados naturales y técnica de alta especialidad.",
     "primaryCta": "Agendar consulta",
     "secondaryCta": "Ver procedimientos",
     "trust": "Consultas 100% confidenciales",
@@ -31,11 +31,11 @@
     ]
   },
   "about": {
-    "eyebrow": "Perfil médico",
+    "eyebrow": "Sobre mí",
     "title": "Cirugía facial y corporal con criterio estético de alta especialidad.",
     "paragraphs": [
       "El Dr. [NOMBRE] integra técnica quirúrgica avanzada con planeación personalizada para objetivos realistas y armónicos.",
-      "Cada protocolo de [CLINIC_NAME] prioriza seguridad, ética y seguimiento cercano desde la primera valoración hasta la recuperación final."
+      "Cada protocolo en mi práctica prioriza seguridad, ética y seguimiento cercano desde la primera valoración hasta la recuperación final."
     ],
     "imageAlt": "Retrato del cirujano plástico",
     "chips": [
@@ -112,7 +112,7 @@
   },
   "testimonials": {
     "eyebrow": "Testimonios",
-    "title": "Experiencias reales de pacientes internacionales y locales.",
+    "title": "Experiencias reales de pacientes que confiaron en mi práctica.",
     "items": [
       {
         "quote": "El proceso fue discreto, claro y sumamente profesional. El resultado luce natural y elegante.",
@@ -149,7 +149,7 @@
   "contact": {
     "eyebrow": "Consulta inicial",
     "title": "Agenda tu valoración privada",
-    "subtitle": "Completa este formulario y el equipo de [CLINIC_NAME] te contactará en menos de 24 horas hábiles.",
+    "subtitle": "Completa este formulario y mi consultorio te contactará en menos de 24 horas hábiles.",
     "form": {
       "fullName": "Nombre completo",
       "email": "Correo electrónico",
@@ -183,9 +183,10 @@
     }
   },
   "booking": {
-    "eyebrow": "Agenda con especialistas",
-    "title": "Selecciona al cirujano ideal para tu valoración privada.",
-    "subtitle": "Elige médico, horario y modalidad de consulta desde el calendario en línea.",
+    "eyebrow": "Agenda conmigo",
+    "title": "Reserva tu consulta privada con Dr. [NOMBRE].",
+    "subtitle": "Selecciona horario y modalidad de consulta directamente en el calendario en línea.",
+    "specialty": "Cirugía facial y corporal de alta especialidad",
     "languagesLabel": "Idiomas",
     "languageBadges": {
       "es": "ES",
@@ -195,33 +196,7 @@
     "unavailable": "Agenda no disponible",
     "close": "Cerrar agenda",
     "modalTitle": "Agenda con {name}",
-    "photoAlt": "Foto de perfil de {name}",
-    "doctors": {
-      "doctor1": {
-        "name": "Dr. [NOMBRE 01]",
-        "specialty": "Rinoplastia y cirugía facial"
-      },
-      "doctor2": {
-        "name": "Dra. [NOMBRE 02]",
-        "specialty": "Blefaroplastia y rejuvenecimiento periocular"
-      },
-      "doctor3": {
-        "name": "Dr. [NOMBRE 03]",
-        "specialty": "Contorno corporal y liposucción de alta definición"
-      },
-      "doctor4": {
-        "name": "Dra. [NOMBRE 04]",
-        "specialty": "Mamoplastia estética y reconstructiva"
-      },
-      "doctor5": {
-        "name": "Dr. [NOMBRE 05]",
-        "specialty": "Lifting facial y armonización avanzada"
-      },
-      "doctor6": {
-        "name": "Dra. [NOMBRE 06]",
-        "specialty": "Abdominoplastia y cirugía postbariátrica"
-      }
-    }
+    "photoAlt": "Retrato de {name}"
   },
   "certifications": {
     "label": "Certificaciones y Afiliaciones",
@@ -236,11 +211,11 @@
   },
   "footer": {
     "logo": "DR. {doctorName}",
-    "tagline": "Plantilla premium para clínica privada de cirugía plástica en Guadalajara.",
+    "tagline": "Marca personal premium para cirujano plástico en Guadalajara.",
     "quickLinksTitle": "Enlaces",
     "quickLinks": [
       { "id": "procedures", "label": "Procedimientos" },
-      { "id": "about", "label": "Nosotros" },
+      { "id": "about", "label": "Sobre mí" },
       { "id": "before-after", "label": "Antes y Después" },
       { "id": "contact", "label": "Contacto" }
     ],

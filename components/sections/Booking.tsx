@@ -1,39 +1,37 @@
 'use client';
 
-import Button from '@/components/ui/Button';
-import type {DoctorProfile} from '@/lib/doctors';
-import {doctors} from '@/lib/doctors';
-import {BLUR_DATA_URL} from '@/lib/image';
-import {AnimatePresence, motion, useInView} from 'framer-motion';
 import Cal from '@calcom/embed-react';
+import Button from '@/components/ui/Button';
+import {BLUR_DATA_URL, PLACEHOLDER_IMAGE_PATH} from '@/lib/image';
+import {AnimatePresence, motion, useInView} from 'framer-motion';
 import Image from 'next/image';
 import {useTranslations} from 'next-intl';
-import {useEffect, useMemo, useRef, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 
 export default function Booking() {
   const t = useTranslations('booking');
-  const tDoctors = useTranslations('booking.doctors');
-  const tLanguages = useTranslations('booking.languageBadges');
+  const calUsername = process.env.NEXT_PUBLIC_CAL_USERNAME ?? '';
+  const surgeonName = process.env.NEXT_PUBLIC_CLINIC_NAME ?? 'DR. [NOMBRE]';
+  const [isOpen, setIsOpen] = useState(false);
+
   const ref = useRef<HTMLElement | null>(null);
   const isInView = useInView(ref, {once: true, amount: 0.15});
-  const [activeDoctor, setActiveDoctor] = useState<DoctorProfile | null>(null);
-
-  const doctorCards = useMemo(() => doctors, []);
+  const hasCalendar = calUsername.trim().length > 0;
 
   useEffect(() => {
-    if (!activeDoctor) {
+    if (!isOpen) {
       return;
     }
 
     const onKeyDown = (event: KeyboardEvent): void => {
       if (event.key === 'Escape') {
-        setActiveDoctor(null);
+        setIsOpen(false);
       }
     };
 
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [activeDoctor]);
+  }, [isOpen]);
 
   return (
     <>
@@ -50,94 +48,71 @@ export default function Booking() {
             <p className="text-sm font-light text-[var(--color-ink-muted)] md:text-base">{t('subtitle')}</p>
           </motion.div>
 
-          <motion.div
-            initial="hidden"
-            animate={isInView ? 'show' : 'hidden'}
-            variants={{
-              hidden: {},
-              show: {
-                transition: {
-                  staggerChildren: 0.1
-                }
-              }
-            }}
-            className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3"
+          <motion.article
+            initial={{opacity: 0, y: 24}}
+            animate={isInView ? {opacity: 1, y: 0} : {}}
+            transition={{duration: 0.7, ease: 'easeOut', delay: 0.1}}
+            className="mx-auto max-w-4xl overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]"
           >
-            {doctorCards.map((doctor) => {
-              const name = tDoctors(doctor.nameKey);
-              const specialty = tDoctors(doctor.specialtyKey);
-              const hasCalendar = doctor.calUsername.trim().length > 0;
+            <div className="grid gap-0 md:grid-cols-2">
+              <div className="relative aspect-[4/5] md:aspect-auto">
+                <Image
+                  src={PLACEHOLDER_IMAGE_PATH}
+                  alt={t('photoAlt', {name: surgeonName})}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                  className="object-cover"
+                  placeholder="blur"
+                  blurDataURL={BLUR_DATA_URL}
+                />
+              </div>
 
-              return (
-                <motion.article
-                  key={doctor.id}
-                  variants={{
-                    hidden: {opacity: 0, y: 20},
-                    show: {opacity: 1, y: 0}
-                  }}
-                  className="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]"
+              <div className="space-y-6 p-8">
+                <div>
+                  <p className="font-display text-4xl leading-tight text-[var(--color-ink)]">{surgeonName}</p>
+                  <p className="mt-2 text-sm text-[var(--color-ink-muted)]">{t('specialty')}</p>
+                </div>
+
+                <div className="space-y-2">
+                  <p className="text-xs uppercase tracking-[0.12em] text-[var(--color-ink-muted)]">{t('languagesLabel')}</p>
+                  <div className="flex gap-2">
+                    <span className="rounded-full border border-[var(--color-border)] px-3 py-1 text-[11px] font-medium tracking-[0.08em] text-[var(--color-ink-muted)]">
+                      {t('languageBadges.es')}
+                    </span>
+                    <span className="rounded-full border border-[var(--color-border)] px-3 py-1 text-[11px] font-medium tracking-[0.08em] text-[var(--color-ink-muted)]">
+                      {t('languageBadges.en')}
+                    </span>
+                  </div>
+                </div>
+
+                <Button
+                  type="button"
+                  variant="primary"
+                  fullWidth
+                  disabled={!hasCalendar}
+                  onClick={() => setIsOpen(true)}
+                  className={hasCalendar ? '' : 'cursor-not-allowed opacity-60'}
                 >
-                  <div className="relative aspect-[4/5] overflow-hidden">
-                    <Image
-                      src={doctor.photoPlaceholder}
-                      alt={t('photoAlt', {name})}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                      className="object-cover"
-                      placeholder="blur"
-                      blurDataURL={BLUR_DATA_URL}
-                    />
-                  </div>
-                  <div className="space-y-4 p-6">
-                    <div>
-                      <h3 className="font-display text-3xl font-medium text-[var(--color-ink)]">{name}</h3>
-                      <p className="text-sm font-light text-[var(--color-ink-muted)]">{specialty}</p>
-                    </div>
-
-                    <div className="space-y-2">
-                      <p className="text-xs uppercase tracking-[0.12em] text-[var(--color-ink-muted)]">{t('languagesLabel')}</p>
-                      <div className="flex gap-2">
-                        {doctor.languages.map((language) => (
-                          <span
-                            key={`${doctor.id}-${language}`}
-                            className="rounded-full border border-[var(--color-border)] px-3 py-1 text-[11px] font-medium tracking-[0.08em] text-[var(--color-ink-muted)]"
-                          >
-                            {tLanguages(language)}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <Button
-                      type="button"
-                      variant="primary"
-                      fullWidth
-                      disabled={!hasCalendar}
-                      onClick={() => setActiveDoctor(doctor)}
-                      className={hasCalendar ? '' : 'cursor-not-allowed opacity-60'}
-                    >
-                      {hasCalendar ? t('cta', {name}) : t('unavailable')}
-                    </Button>
-                  </div>
-                </motion.article>
-              );
-            })}
-          </motion.div>
+                  {hasCalendar ? t('cta', {name: surgeonName}) : t('unavailable')}
+                </Button>
+              </div>
+            </div>
+          </motion.article>
         </div>
       </section>
 
       <AnimatePresence>
-        {activeDoctor ? (
+        {isOpen ? (
           <motion.div
             initial={{opacity: 0}}
             animate={{opacity: 1}}
             exit={{opacity: 0}}
             transition={{duration: 0.2}}
             className="fixed inset-0 z-[60] bg-black/60 p-4 md:p-6"
-            onClick={() => setActiveDoctor(null)}
-            aria-modal="true"
+            onClick={() => setIsOpen(false)}
             role="dialog"
-            aria-label={t('modalTitle', {name: tDoctors(activeDoctor.nameKey)})}
+            aria-modal="true"
+            aria-label={t('modalTitle', {name: surgeonName})}
           >
             <motion.div
               initial={{opacity: 0, y: 12}}
@@ -149,12 +124,12 @@ export default function Booking() {
             >
               <header className="flex items-center justify-between border-b border-[var(--color-border)] px-5 py-4 md:px-6">
                 <div>
-                  <p className="font-display text-3xl leading-none text-[var(--color-ink)]">{tDoctors(activeDoctor.nameKey)}</p>
-                  <p className="mt-1 text-sm text-[var(--color-ink-muted)]">{tDoctors(activeDoctor.specialtyKey)}</p>
+                  <p className="font-display text-3xl leading-none text-[var(--color-ink)]">{surgeonName}</p>
+                  <p className="mt-1 text-sm text-[var(--color-ink-muted)]">{t('specialty')}</p>
                 </div>
                 <button
                   type="button"
-                  onClick={() => setActiveDoctor(null)}
+                  onClick={() => setIsOpen(false)}
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-ink-muted)] transition-colors duration-200 hover:text-[var(--color-ink)]"
                   aria-label={t('close')}
                 >
@@ -162,7 +137,7 @@ export default function Booking() {
                 </button>
               </header>
               <div className="h-full min-h-[70vh] w-full">
-                <Cal calLink={activeDoctor.calUsername} className="h-full w-full" />
+                <Cal calLink={calUsername} className="h-full w-full" />
               </div>
             </motion.div>
           </motion.div>
@@ -171,3 +146,4 @@ export default function Booking() {
     </>
   );
 }
+

@@ -8,7 +8,7 @@
     "logo": "DR. {doctorName}",
     "links": [
       { "id": "procedures", "label": "Procedures" },
-      { "id": "about", "label": "About" },
+      { "id": "about", "label": "About Me" },
       { "id": "before-after", "label": "Before & After" },
       { "id": "contact", "label": "Contact" }
     ],
@@ -19,7 +19,7 @@
   "hero": {
     "eyebrow": "Plastic Surgery · Guadalajara",
     "headline": "The finest version|of you,|with surgical precision.",
-    "subhead": "Premium template for [CLINIC_NAME] in Puerta de Hierro. Discreet care, natural results, institutional-grade safety.",
+    "subhead": "Dr. [NAME], plastic surgeon in Puerta de Hierro. Private care, natural outcomes and high-specialty technique.",
     "primaryCta": "Schedule consultation",
     "secondaryCta": "Explore procedures",
     "trust": "100% confidential consultations",
@@ -31,11 +31,11 @@
     ]
   },
   "about": {
-    "eyebrow": "Medical profile",
+    "eyebrow": "About me",
     "title": "Facial and body surgery guided by high-specialty aesthetic judgment.",
     "paragraphs": [
       "Dr. [NAME] combines advanced surgical technique with individualized planning for realistic, harmonious outcomes.",
-      "Every [CLINIC_NAME] protocol prioritizes safety, ethics and close follow-up from initial consultation through full recovery."
+      "Every protocol in my practice prioritizes safety, ethics and close follow-up from consultation through full recovery."
     ],
     "imageAlt": "Portrait of the plastic surgeon",
     "chips": [
@@ -112,7 +112,7 @@
   },
   "testimonials": {
     "eyebrow": "Testimonials",
-    "title": "Real experiences from local and international patients.",
+    "title": "Real experiences from patients who trusted my practice.",
     "items": [
       {
         "quote": "The process was discreet, clear and deeply professional. My result looks elegant and natural.",
@@ -149,7 +149,7 @@
   "contact": {
     "eyebrow": "Initial consultation",
     "title": "Book your private assessment",
-    "subtitle": "Submit this form and the [CLINIC_NAME] team will contact you within one business day.",
+    "subtitle": "Submit this form and my office will contact you within one business day.",
     "form": {
       "fullName": "Full name",
       "email": "Email",
@@ -183,9 +183,10 @@
     }
   },
   "booking": {
-    "eyebrow": "Book with specialists",
-    "title": "Choose the right surgeon for your private consultation.",
-    "subtitle": "Select doctor, date and appointment format directly from the online calendar.",
+    "eyebrow": "Book with me",
+    "title": "Schedule your private consultation with Dr. [NAME].",
+    "subtitle": "Select your preferred appointment time and format directly in the online calendar.",
+    "specialty": "High-specialty facial and body plastic surgery",
     "languagesLabel": "Languages",
     "languageBadges": {
       "es": "ES",
@@ -195,33 +196,7 @@
     "unavailable": "Booking unavailable",
     "close": "Close booking",
     "modalTitle": "Book with {name}",
-    "photoAlt": "Profile photo of {name}",
-    "doctors": {
-      "doctor1": {
-        "name": "Dr. [NAME 01]",
-        "specialty": "Rhinoplasty and facial surgery"
-      },
-      "doctor2": {
-        "name": "Dr. [NAME 02]",
-        "specialty": "Blepharoplasty and periocular rejuvenation"
-      },
-      "doctor3": {
-        "name": "Dr. [NAME 03]",
-        "specialty": "Body contouring and high-definition liposuction"
-      },
-      "doctor4": {
-        "name": "Dr. [NAME 04]",
-        "specialty": "Aesthetic and reconstructive breast surgery"
-      },
-      "doctor5": {
-        "name": "Dr. [NAME 05]",
-        "specialty": "Facelift and advanced facial harmonization"
-      },
-      "doctor6": {
-        "name": "Dr. [NAME 06]",
-        "specialty": "Abdominoplasty and post-bariatric surgery"
-      }
-    }
+    "photoAlt": "Portrait of {name}"
   },
   "certifications": {
     "label": "Certifications & Affiliations",
@@ -236,11 +211,11 @@
   },
   "footer": {
     "logo": "DR. {doctorName}",
-    "tagline": "Premium template for a private plastic surgery clinic in Guadalajara.",
+    "tagline": "Premium personal-brand template for a plastic surgeon in Guadalajara.",
     "quickLinksTitle": "Quick links",
     "quickLinks": [
       { "id": "procedures", "label": "Procedures" },
-      { "id": "about", "label": "About" },
+      { "id": "about", "label": "About Me" },
       { "id": "before-after", "label": "Before & After" },
       { "id": "contact", "label": "Contact" }
     ],
