@@ -1,8 +1,6 @@
 'use client';
 
-import {BLUR_DATA_URL, PLACEHOLDER_IMAGE_PATH} from '@/lib/image';
 import {motion, useInView} from 'framer-motion';
-import Image from 'next/image';
 import {useTranslations} from 'next-intl';
 import {useMemo, useRef} from 'react';
 
@@ -46,52 +44,26 @@ export default function BeforeAfter() {
             hidden: {},
             show: {
               transition: {
-                staggerChildren: 0.1
+                staggerChildren: 0.08
               }
             }
           }}
-          className="grid gap-6 xl:grid-cols-3"
+          className="grid gap-5 md:grid-cols-2 xl:grid-cols-3"
         >
           {items.map((item) => (
             <motion.article
               key={item.procedure}
               variants={{
-                hidden: {opacity: 0, y: 20},
+                hidden: {opacity: 0, y: 16},
                 show: {opacity: 1, y: 0}
               }}
-              className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4"
+              className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5"
             >
-              <div className="grid grid-cols-2 gap-3">
-                <figure className="space-y-2">
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-[var(--color-border)]">
-                    <Image
-                      src={PLACEHOLDER_IMAGE_PATH}
-                      alt={t('pairAlt', {procedure: item.procedure})}
-                      fill
-                      sizes="(max-width: 1280px) 50vw, 16vw"
-                      className="object-cover"
-                      placeholder="blur"
-                      blurDataURL={BLUR_DATA_URL}
-                    />
-                  </div>
-                  <figcaption className="text-xs tracking-[0.08em] text-[var(--color-ink-muted)]">{t('beforeLabel')}</figcaption>
-                </figure>
-                <figure className="space-y-2">
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-xl border border-[var(--color-border)]">
-                    <Image
-                      src={PLACEHOLDER_IMAGE_PATH}
-                      alt={t('pairAlt', {procedure: item.procedure})}
-                      fill
-                      sizes="(max-width: 1280px) 50vw, 16vw"
-                      className="object-cover"
-                      placeholder="blur"
-                      blurDataURL={BLUR_DATA_URL}
-                    />
-                  </div>
-                  <figcaption className="text-xs tracking-[0.08em] text-[var(--color-ink-muted)]">{t('afterLabel')}</figcaption>
-                </figure>
+              <h3 className="font-display text-2xl text-[var(--color-ink)]">{item.procedure}</h3>
+              <div className="mt-4 grid grid-cols-2 gap-3 text-xs tracking-[0.08em] text-[var(--color-ink-muted)]">
+                <p className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] px-3 py-2 text-center">{t('beforeLabel')}</p>
+                <p className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] px-3 py-2 text-center">{t('afterLabel')}</p>
               </div>
-              <p className="mt-4 font-display text-2xl text-[var(--color-ink)]">{item.procedure}</p>
             </motion.article>
           ))}
         </motion.div>

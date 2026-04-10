@@ -3,9 +3,7 @@
 import Cal from '@calcom/embed-react';
 import Button from '@/components/ui/Button';
 import doctorConfig from '@/lib/doctor.config';
-import {BLUR_DATA_URL, PLACEHOLDER_IMAGE_PATH} from '@/lib/image';
 import {AnimatePresence, motion, useInView} from 'framer-motion';
-import Image from 'next/image';
 import {useTranslations} from 'next-intl';
 import {useEffect, useRef, useState} from 'react';
 
@@ -41,7 +39,7 @@ export default function Booking() {
             initial={{opacity: 0, y: 24}}
             animate={isInView ? {opacity: 1, y: 0} : {}}
             transition={{duration: 0.65, ease: 'easeOut'}}
-            className="mx-auto mb-12 max-w-3xl space-y-4 text-center"
+            className="mx-auto mb-10 max-w-3xl space-y-4 text-center"
           >
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-accent)]">{t('eyebrow')}</p>
             <h2 className="font-display text-4xl leading-tight font-normal text-[var(--color-ink)] md:text-5xl">{t('title', {doctorName: doctorConfig.name})}</h2>
@@ -52,27 +50,16 @@ export default function Booking() {
             initial={{opacity: 0, y: 24}}
             animate={isInView ? {opacity: 1, y: 0} : {}}
             transition={{duration: 0.7, ease: 'easeOut', delay: 0.1}}
-            className="mx-auto max-w-4xl overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]"
+            className="mx-auto max-w-4xl rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 md:p-8"
           >
-            <div className="grid gap-0 md:grid-cols-2">
-              <div className="relative aspect-[4/5] md:aspect-auto">
-                <Image
-                  src={PLACEHOLDER_IMAGE_PATH}
-                  alt={t('photoAlt', {doctorName: doctorConfig.name})}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 40vw"
-                  className="object-cover"
-                  placeholder="blur"
-                  blurDataURL={BLUR_DATA_URL}
-                />
+            <div className="grid gap-7 md:grid-cols-[1.2fr_1fr]">
+              <div className="space-y-4">
+                <p className="font-display text-4xl leading-tight text-[var(--color-ink)]">{doctorConfig.name}</p>
+                <p className="text-sm text-[var(--color-ink-muted)]">{doctorConfig.title}</p>
+                <p className="text-sm text-[var(--color-ink-muted)]">{doctorConfig.address}</p>
               </div>
 
-              <div className="space-y-6 p-8">
-                <div>
-                  <p className="font-display text-4xl leading-tight text-[var(--color-ink)]">{doctorConfig.name}</p>
-                  <p className="mt-2 text-sm text-[var(--color-ink-muted)]">{doctorConfig.title}</p>
-                </div>
-
+              <div className="space-y-4">
                 <div className="space-y-2">
                   <p className="text-xs uppercase tracking-[0.12em] text-[var(--color-ink-muted)]">{t('languagesLabel')}</p>
                   <div className="flex gap-2">

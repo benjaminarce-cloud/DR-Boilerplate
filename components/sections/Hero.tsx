@@ -111,18 +111,14 @@ export default function Hero() {
           initial={{opacity: 0, y: 20}}
           animate={{opacity: 1, y: 0}}
           transition={{delay: 0.5, duration: 0.6, ease: 'easeOut'}}
-          className="border-t border-[var(--color-border)] pt-6"
+          className="grid gap-3 border-t border-[var(--color-border)] pt-6 sm:grid-cols-3"
         >
-          <div className="flex flex-wrap gap-3">
-            {doctorConfig.stats.map((stat) => (
-              <span
-                key={`${stat.value}-${stat.labelKey}`}
-                className="rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-xs tracking-[0.08em] text-[var(--color-ink-muted)]"
-              >
-                {stat.value} {t(stat.labelKey)}
-              </span>
-            ))}
-          </div>
+          {doctorConfig.stats.map((stat) => (
+            <div key={`${stat.value}-${stat.labelKey}`} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3">
+              <p className="font-display text-2xl leading-tight text-[var(--color-ink)]">{stat.value}</p>
+              <p className="mt-1 text-xs tracking-[0.08em] text-[var(--color-ink-muted)]">{t(stat.labelKey)}</p>
+            </div>
+          ))}
         </motion.div>
       </div>
     </section>
